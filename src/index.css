@@ -10,6 +10,12 @@
   font-display: swap;
 }
 
-html {
-  font-family: "Roboto Mono", monospace;
+@layer base {
+  html {
+    font-family: "Roboto Mono", monospace;
+  }
+
+  body {
+    @apply bg-neutral-100
+  }
 }
