@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/roboto-mono-var.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: "Roboto Mono", monospace;
+}
