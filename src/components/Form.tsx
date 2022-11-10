@@ -33,15 +33,15 @@ const Form: React.FC<Props> = ({ setFormData, formData }) => {
 
     return (
         <form className="flex flex-col gap-3">
-            <div>
+            <div className="cursor-auto">
                 <label
                     className="flex flex-col gap-2 text-lg text-neutral-900"
                     htmlFor="bill-amount"
                 >
                     <p className="inline-block">Bill</p>
 
-                    <div className="inline-flex items-center border-2 border-neutral-900 pl-2">
-                        <p className="w-full">$</p>
+                    <div className="inline-flex items-center border-2 border-neutral-900 pl-2 w-full">
+                        <p>$</p>
 
                         <input
                             onChange={handleChange}
