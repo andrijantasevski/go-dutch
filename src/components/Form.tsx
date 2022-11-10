@@ -32,7 +32,7 @@ const Form: React.FC<Props> = ({ setFormData, formData }) => {
     }, [tipRadioGroup])
 
     return (
-        <form className="flex w-2/4 flex-col gap-3">
+        <form className="flex flex-col gap-3">
             <div>
                 <label
                     className="flex flex-col gap-2 text-lg text-neutral-900"
@@ -45,6 +45,7 @@ const Form: React.FC<Props> = ({ setFormData, formData }) => {
 
                         <input
                             onChange={handleChange}
+                            value={formData.billAmount === 0 ? "" : formData.billAmount}
                             name="billAmount"
                             type="number"
                             className="w-full border-none bg-transparent text-right text-lg focus:ring-0"
@@ -56,7 +57,7 @@ const Form: React.FC<Props> = ({ setFormData, formData }) => {
             </div>
 
             <p className="text-lg">Select tip</p>
-            <RadioGroup className="grid grid-cols-1 gap-2 text-lg" value={formData.tipRadioGroup} onChange={setTipRadioGroup}>
+            <RadioGroup className="grid grid-cols-1 gap-2 text-lg" value={formData.tipRadioGroup} onChange={setTipRadioGroup} onClick={() => setFormData(prevFormData => { return { ...prevFormData, tipAmount: 0 } })}>
                 <div className="grid grid-cols-3 gap-2">
                     {tipValues.map((tipValue) => {
                         return (
@@ -76,6 +77,7 @@ const Form: React.FC<Props> = ({ setFormData, formData }) => {
                     <input
                         onClick={() => setTipRadioGroup(0)}
                         onChange={handleChange}
+                        value={formData.tipAmount === 0 ? "" : formData.tipAmount}
                         name="tipAmount"
                         type="number"
                         placeholder="Custom"
