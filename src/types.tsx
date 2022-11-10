@@ -4,3 +4,8 @@ export interface FormData {
     tipRadioGroup: number
     numberOfPeople: number
 }
+
+export interface CalculatedTips {
+    calculatedTipPerPerson: number
+    calculatedTotalPerPerson: number
+}
